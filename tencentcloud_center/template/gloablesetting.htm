@@ -3,17 +3,17 @@
     <table class="tb tb2">
         <tbody>
         <tr>
-            <td colspan="2" class="td27" s="1">开启全局密钥:</td>
+            <td colspan="2" class="td27" s="1">{lang tencentcloud_center:open_global_secret}:</td>
         </tr>
         <tr class="noborder">
             <td class="vtop rowform">
                 <ul onmouseover="altStyle(this);">
                     <li id="site_sec_yes" class="checked">
-                        <input class="radio" type="radio" name="tencentcloudglobal[site_sec_on]" value="1" onclick="switchKey(1)">是
+                        <input class="radio" type="radio" name="tencentcloudglobal[site_sec_on]" value="1" onclick="switchKey(1)">{lang tencentcloud_center:yes}
                     </li>
                     <li id="site_sec_no" >
                         <input class="radio" type="radio" name="tencentcloudglobal[site_sec_on]" value="0"  onclick="switchKey(0)">
-                        否</li>
+                        {lang tencentcloud_center:no}</li>
                 </ul>
             </td>
         </tr>
@@ -24,8 +24,7 @@
             <td class="vtop rowform">
                 <input name="tencentcloudglobal[secretId]" id="secretId" size="50" type="text" class="text" value="{$config['secretId']}">
             </td>
-            <td class="vtop tips2" s="1">访问<a href="https://console.qcloud.com/cam/capi" target="_blank">密钥管理</a>获取
-                SecretId和SecretKey或通过"新建密钥"创建密钥串</td>
+            <td class="vtop tips2" s="1">{lang tencentcloud_center:visit}<a href="https://console.qcloud.com/cam/capi" target="_blank">{lang tencentcloud_center:secret_manage}</a>{lang tencentcloud_center:secret_desc}</td>
         </tr>
         <tr>
             <td colspan="2" class="td27" s="1">SecretKey:</td>
@@ -34,28 +33,27 @@
             <td class="vtop rowform">
                 <input name="tencentcloudglobal[secretKey]" id="secretKey"  size="50" type="text" class="text" value="{$config['secretKey']}">
             </td>
-            <td class="vtop tips2" s="1">访问<a href="https://console.qcloud.com/cam/capi" target="_blank">密钥管理</a>获取
-                SecretId和SecretKey或通过"新建密钥"创建密钥串</td>
+            <td class="vtop tips2" s="1">{lang tencentcloud_center:visit}<a href="https://console.qcloud.com/cam/capi" target="_blank">{lang tencentcloud_center:secret_manage}</a>{lang tencentcloud_center:secret_desc}</td>
         </tr>
         <tr>
-            <td colspan="2" class="td27" s="1">参与体验优化项目:</td>
+            <td colspan="2" class="td27" s="1">{lang tencentcloud_center:participate}:</td>
         </tr>
         <tr class="noborder">
             <td class="vtop rowform">
                 <ul onmouseover="altStyle(this);" >
                     <li class="checked" id="site_report_yes">
-                        <input class="radio" type="radio" name="tencentcloudglobal[site_report_on]" value="1" >是
+                        <input class="radio" type="radio" name="tencentcloudglobal[site_report_on]" value="1" >{lang tencentcloud_center:yes}
                     </li>
                     <li id="site_report_no">
                         <input class="radio" type="radio" name="tencentcloudglobal[site_report_on]" value="0" >
-                        否</li>
+                        {lang tencentcloud_center:no}</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td colspan="15">
                 <div class="fixsel">
-                <input type="submit" class="btn"  id="globalsubmit" value="保存设置" />
+                <input type="submit" class="btn"  id="globalsubmit" value="{lang tencentcloud_center:save_settings}" />
                 </div>
             </td>
         </tr>
@@ -64,8 +62,8 @@
 
 </form>
 <div style="text-align: center" >
-    <a href="https://openapp.qq.com/" target="_blank">文档中心</a> | <a href="https://github.com/Tencent-Cloud-Plugins/" target="_blank">GitHub</a> | <a
-        href="https://support.qq.com/product/164613" target="_blank">反馈建议</a>
+    <a href="https://openapp.qq.com/" target="_blank">{lang tencentcloud_center:document_center}</a> | <a href="https://github.com/Tencent-Cloud-Plugins/" target="_blank">GitHub</a> | <a
+        href="https://support.qq.com/product/164613" target="_blank">{lang tencentcloud_center:reply_advice}</a>
 </div>
 <script>
     var customSelect = '{$config["site_sec_on"]}';

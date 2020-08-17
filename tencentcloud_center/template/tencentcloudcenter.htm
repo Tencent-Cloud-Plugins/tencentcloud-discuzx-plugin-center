@@ -5,10 +5,10 @@
     <table class="tb tb2">
         <tbody>
         <tr>
-           <td>插件功能</td>
-            <td>版本</td>
-            <td>状态</td>
-            <td>操作</td>
+            <td>{lang tencentcloud_center:plugin_function}</td>
+            <td>{lang tencentcloud_center:version}</td>
+            <td>{lang tencentcloud_center:status}</td>
+            <td>{lang tencentcloud_center:operator}</td>
         </tr>
         <!--{loop $pluginsInfo $key $plugin}-->
         {eval echo '<tr>';}
@@ -21,26 +21,26 @@
             <!--{if  $plugin['activation'] == 'true' }-->
                 <!--{if $plugin['status'] == 'true'  }-->
                 {eval
-            echo '<td>开启</td>';
-            echo '<td><a type="button"  style="margin-right:2%" class="btn" href="' . $plugin['href'] . '" type="button">配置</a>';
+            echo '<td>{lang tencentcloud_center:open}</td>';
+            echo '<td><a type="button"  style="margin-right:2%" class="btn" href="' . $plugin['href'] . '" type="button">{lang tencentcloud_center:config}</a>';
             echo '<input type="hidden" value="'.$plugin['plugin_id'].'" name="tencentconfig[pluginId]"/>';
             echo '<input type="hidden" value="disable" name="tencentconfig[operation]"/>';
-                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=disable" type="button">关闭</a></td>';
+                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=disable" type="button">{lang tencentcloud_center:close}</a></td>';
             }
 
             <!--{else}-->
             {eval
-            echo '<td>关闭</td>';
+            echo '<td>{lang tencentcloud_center:close}</td>';
             echo '<td><input type="hidden" value="'.$plugin['plugin_id'].'" name="tencentconfig[pluginId]"/>';
             echo '<input type="hidden" value="enable" name="tencentconfig[operation]"/>';
-                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=enable" type="button">开启</a></td>';
+                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=enable" type="button">{lang tencentcloud_center:open}</a></td>';
             }
             <!--{/if}-->
 
             <!--{else}-->
                 {eval
-            echo  '<td>未安装</td>';
-            echo  '<td><a type="button" class="btn" href="admin.php?action=cloudaddons">安装</a></td>';
+            echo  '<td>{lang tencentcloud_center:havnt_install}</td>';
+            echo  '<td><a type="button" class="btn" href="admin.php?action=cloudaddons">{lang tencentcloud_center:install}</a></td>';
             }
             <!--{/if}-->
             {eval echo '</tr>';}
@@ -50,8 +50,8 @@
     <br>
     <br>
     <div style="text-align: center" >
-        <a href="https://openapp.qq.com/" target="_blank">文档中心</a> | <a href="https://github.com/Tencent-Cloud-Plugins/" target="_blank">GitHub</a> | <a
-            href="https://support.qq.com/product/164613" target="_blank">反馈建议</a>
+        <a href="https://openapp.qq.com/" target="_blank">{lang tencentcloud_center:document_center}</a> | <a href="https://github.com/Tencent-Cloud-Plugins/" target="_blank">GitHub</a> | <a
+            href="https://support.qq.com/product/164613" target="_blank">{lang tencentcloud_center:reply_advice}</a>
     </div>
 
 
