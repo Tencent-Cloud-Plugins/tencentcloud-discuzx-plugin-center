@@ -19,7 +19,7 @@ if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
     exit('Access Denied');
 }
 
-$create_sql = <<<EOF
+$create_sql = "
 CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
        `plugin_name` varchar(255) NOT NULL DEFAULT '',
        `version` varchar(32) NOT NULL DEFAULT '',
@@ -30,44 +30,57 @@ CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
        `install_datetime` timestamp NOT NULL DEFAULT  CURRENT_TIMESTAMP(),
        `last_modify_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
        PRIMARY KEY (`plugin_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-EOF;
+) ENGINE=InnoDB;
+";
 runquery($create_sql);
 
-$create_sql = <<<EOF
+$create_sql = "
 CREATE TABLE IF NOT EXISTS cdb_tencentcloud_center (
        `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
        `plugin_name` varchar(255) NOT NULL DEFAULT '',
        `nick_name` varchar(255) NOT NULL DEFAULT '',
        `plugin_desc` varchar(255) NOT NULL DEFAULT '',
        PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-EOF;
+) ENGINE=InnoDB ;
+";
 runquery($create_sql);
 
-$insert_sql = <<<EOF
-INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) VALUES ( 'tencentcloud_captcha','腾讯云验证码（CAPTCHA）插件', '通过腾讯云验证码提供立体、全面的人机验证。');
-EOF;
+$scriptlang = lang('plugin/tencentcloud_center');
+
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_captcha', '" . $scriptlang["tencentcloud_captcha_nickname"] . "', '" . $scriptlang["tencentcloud_captcha_desc"] . "');
+";
 runquery($insert_sql);
 
-$insert_sql = <<<EOF
-INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) VALUES ( 'tencentcloud_cos', '腾讯云对象存储（COS）插件', '通过腾讯云对象存储服务使网站中静态文件无缝同步腾讯云对象存储COS，提升网站内容访问速度，降低本地存储开销。');
-EOF;
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_cos', '" . $scriptlang["tencentcloud_cos_nickname"] . "', '" . $scriptlang["tencentcloud_cos_nickname"] . "');
+";
 runquery($insert_sql);
 
-$insert_sql = <<<EOF
-INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) VALUES ( 'tencentcloud_ims', '腾讯云图片内容安全（IMS）插件', '通过腾讯云图片内容安全服务对媒体库上传和URL插入的图片进行内容检测和过滤。');
-EOF;
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_ims', '" . $scriptlang["tencentcloud_ims_nickname"] . "', '" . $scriptlang["tencentcloud_ims_nickname"] . "');
+";
 runquery($insert_sql);
 
-$insert_sql = <<<EOF
-INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) VALUES ( 'tencentcloud_sms', '腾讯云短信（SMS）插件', '通过腾讯云短信服务使网站支持手机号登录,通过手机号+短信验证码找回密码等功能。');
-EOF;
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_sms', '" . $scriptlang["tencentcloud_sms_nickname"] . "', '" . $scriptlang["tencentcloud_sms_nickname"] . "');
+";
 runquery($insert_sql);
 
-$insert_sql = <<<EOF
-INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) VALUES ( 'tencentcloud_tms', '腾讯云文本内容安全（TMS）插件', '通过腾讯云文本内容安全服务对评论提交的文字进行内容检测和过滤。');
-EOF;
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_tms', '" . $scriptlang["tencentcloud_tms_nickname"] . "', '" . $scriptlang["tencentcloud_tms_nickname"] . "');
+";
+runquery($insert_sql);
+
+$insert_sql = "
+INSERT INTO cdb_tencentcloud_center (`plugin_name`, `nick_name`, `plugin_desc`) 
+VALUES ( 'tencentcloud_vod', '" . $scriptlang["tencentcloud_vod_nickname"] . "', '" . $scriptlang["tencentcloud_vod_nickname"] . "');
+";
 runquery($insert_sql);
 
 $finish = TRUE;

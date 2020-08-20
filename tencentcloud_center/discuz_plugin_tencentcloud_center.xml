@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
-	<item id="Version"><![CDATA[X3.4]]></item>
+	<item id="Version"><![CDATA[X1.0.1]]></item>
 	<item id="Time"><![CDATA[2020-07-01 15:43]]></item>
 	<item id="From"><![CDATA[]]></item>
 	<item id="Data">
@@ -44,16 +44,24 @@
 				</item>
 			</item>
 		</item>
-		<item id="version"><![CDATA[X3.1]]></item>
+		<item id="version"><![CDATA[X3.2,X3.3,X3.4]]></item>
 		<item id="installfile"><![CDATA[install.php]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
 		<item id="disablefile"><![CDATA[disable.php]]></item>
 		<item id="language">
 			<item id="scriptlang">
-				<item id="login_strike"><![CDATA[密码错误次数过多，请重新设置马甲账号信息并在 15 分钟后再尝试切换。]]></item>
-				<item id="login_succeed"><![CDATA[您已切换到 {user} {comment}帐号，现在将转入切换前页面。]]></item>
-				<item id="login_succeed_rsnonexistence"><![CDATA[您已切换到 {user} {comment}帐号，但是此账号尚未设置 {olduser} 为马甲。<br /><a href="home.php?mod=spacecp&ac=plugin&id=myrepeats:memcp&username={olduserenc}" target="_blank">[ 设置 {olduser} 为本账号的马甲 ]</a><br /><a href="{referer}">[ 转入切换前页面 ]</a>]]></item>
-				<item id="login_activation"><![CDATA[{user} 账号未在本论坛激活，现在将转入帐号激活页面。]]></item>
+				<item id="tencentcloud_captcha_desc"><![CDATA[通过腾讯云验证码提供立体、全面的人机验证。]]></item>
+				<item id="tencentcloud_captcha_nickname"><![CDATA[腾讯云验证码（CAPTCHA）插件]]></item>
+				<item id="tencentcloud_cos_nickname"><![CDATA[腾讯云对象存储（COS）插件]]></item>
+				<item id="tencentcloud_cos_desc"><![CDATA[通过腾讯云对象存储服务使网站中静态文件无缝同步腾讯云对象存储COS，提升网站内容访问速度，降低本地存储开销。]]></item>
+				<item id="tencentcloud_ims_nickname"><![CDATA[腾讯云图片内容安全（IMS）插件]]></item>
+				<item id="tencentcloud_ims_desc"><![CDATA[通过腾讯云图片内容安全服务对媒体库上传和URL插入的图片进行内容检测和过滤。]]></item>
+				<item id="tencentcloud_sms_nickname"><![CDATA[腾讯云短信（SMS）插件]]></item>
+				<item id="tencentcloud_sms_desc"><![CDATA[通过腾讯云短信服务使网站支持手机号登录,通过手机号+短信验证码找回密码等功能。]]></item>
+				<item id="tencentcloud_tms_nickname"><![CDATA[腾讯云文本内容安全（TMS）插件]]></item>
+				<item id="tencentcloud_tms_desc"><![CDATA[通过腾讯云文本内容安全服务对评论提交的文字进行内容检测和过滤。]]></item>
+				<item id="tencentcloud_vod_nickname"><![CDATA[腾讯云点播（VOD）插件]]></item>
+				<item id="tencentcloud_vod_desc"><![CDATA[使Discuz! X能快捷使用腾讯云点播产品功能。]]></item>
 				<item id="login_invalid"><![CDATA[账号切换失败，请重新设置帐号信息，您还可以尝试 {loginperm} 次。]]></item>
 				<item id="login_password_invalid"><![CDATA[账号切换失败，请重新设置帐号信息。]]></item>
 				<item id="login_question_empty"><![CDATA[请重新设置账号的安全提问以及正确的答案。]]></item>
