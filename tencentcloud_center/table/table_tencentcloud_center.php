@@ -35,16 +35,11 @@ class table_tencentcloud_center extends discuz_table{
      * @return array
      */
     public function findAll() {
-        $results = array();
-        $query = DB::query("SELECT m.*, s.*
+        $sql = "SELECT m.plugin_name plugin_identifier, m.nick_name, m.plugin_desc, s.*
             FROM " . DB::table('tencentcloud_center') . " m
             LEFT JOIN " . DB::table('tencentcloud_pluginInfo') . " s ON m.plugin_name=s.plugin_name
-            WHERE m.plugin_name<>'tencentcloud_center'");
-
-        while($result = DB::fetch($query)) {
-            $results[] = $result;
-        }
-       return $results;
+            WHERE m.plugin_name<>'tencentcloud_center'";
+        return DB::fetch_all($sql);
     }
 
 

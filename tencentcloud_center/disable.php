@@ -16,15 +16,18 @@
  * limitations under the License.
  */
 const AVAIBLE_PLUGIN_ACTIVE = '1';
+
 if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
     exit('Access Denied');
 }
-$dataArray=['tencentcloud_captcha','tencentcloud_cos','tencentcloud_ims','tencentcloud_sms','tencentcloud_tms'];
-for ($i=0;i<count($dataArray);$i++){
+
+$dataArray=['tencentcloud_captcha', 'tencentcloud_cos', 'tencentcloud_ims', 'tencentcloud_sms', 'tencentcloud_tms', 'tencentcloud_vod'];
+
+for ($i=0; $i<count($dataArray); $i++) {
     $pluginInfo=C::t('common_plugin')->fetch_by_identifier($dataArray[$i]);
     if ($pluginInfo['available'] == AVAIBLE_PLUGIN_ACTIVE){
         $landurl = 'action=plugins';
-        cpmsg('插件关闭失败', $landurl . (!empty($_GET['system']) ? '&system=1' : ''), 'error');
+        cpmsg('插件中心关闭失败，需要关闭腾讯云其它插件', $landurl . (!empty($_GET['system']) ? '&system=1' : ''), 'error');
         break;
     }
 }
