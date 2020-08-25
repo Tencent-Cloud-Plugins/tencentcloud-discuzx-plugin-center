@@ -25,7 +25,7 @@ $dataArray=['tencentcloud_captcha', 'tencentcloud_cos', 'tencentcloud_ims', 'ten
 
 for ($i=0; $i<count($dataArray); $i++) {
     $pluginInfo=C::t('common_plugin')->fetch_by_identifier($dataArray[$i]);
-    if ($pluginInfo['available'] == AVAIBLE_PLUGIN_ACTIVE){
+    if ($pluginInfo['available'] == AVAIBLE_PLUGIN_ACTIVE) {
         $landurl = 'action=plugins';
         cpmsg('插件中心关闭失败，需要关闭腾讯云其它插件', $landurl . (!empty($_GET['system']) ? '&system=1' : ''), 'error');
         break;

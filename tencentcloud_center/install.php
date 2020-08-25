@@ -19,8 +19,7 @@ if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
     exit('Access Denied');
 }
 
-$create_sql = "
-CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
+$create_sql = "CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
        `plugin_name` varchar(150) NOT NULL DEFAULT '',
        `version` varchar(32) NOT NULL DEFAULT '',
        `href` varchar(255) NOT NULL  DEFAULT '',
@@ -34,10 +33,9 @@ CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
 ";
 runquery($create_sql);
 
-$create_sql = "
-CREATE TABLE IF NOT EXISTS cdb_tencentcloud_center (
+$create_sql = "CREATE TABLE IF NOT EXISTS cdb_tencentcloud_center (
        `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
-       `plugin_name` varchar(255) NOT NULL DEFAULT '',
+       `plugin_name` varchar(150) NOT NULL DEFAULT '',
        `nick_name` varchar(255) NOT NULL DEFAULT '',
        `plugin_desc` varchar(255) NOT NULL DEFAULT '',
        PRIMARY KEY (`id`)

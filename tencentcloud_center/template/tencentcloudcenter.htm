@@ -25,7 +25,7 @@
             echo '<td><a type="button"  style="margin-right:2%" class="btn" href="' . $plugin['href'] . '" type="button">{lang tencentcloud_center:config}</a>';
             echo '<input type="hidden" value="'.$plugin['plugin_id'].'" name="tencentconfig[pluginId]"/>';
             echo '<input type="hidden" value="disable" name="tencentconfig[operation]"/>';
-                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=disable" type="button">{lang tencentcloud_center:close}</a></td>';
+                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=disable&formhash='.FORMHASH.'" type="button">{lang tencentcloud_center:close}</a></td>';
             }
 
             <!--{else}-->
@@ -33,7 +33,7 @@
             echo '<td>{lang tencentcloud_center:close}</td>';
             echo '<td><input type="hidden" value="'.$plugin['plugin_id'].'" name="tencentconfig[pluginId]"/>';
             echo '<input type="hidden" value="enable" name="tencentconfig[operation]"/>';
-                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=enable" type="button">{lang tencentcloud_center:open}</a></td>';
+                echo '<a type="button"  style="margin-right:2%" class="btn" href="admin.php?action=plugins&operation=config&do='.$currentluginId.'&tcplugin='.$plugin['plugin_id'].'&tcoperation=enable&formhash='.FORMHASH.'" type="button">{lang tencentcloud_center:open}</a></td>';
             }
             <!--{/if}-->
 

@@ -18,7 +18,9 @@
 if(!defined('IN_DISCUZ')) {
     exit('Access Denied');
 }
-require_once DISCUZ_ROOT.'./source/plugin/tencentcloud_center/vendor/autoload.php';
+
+require_once DISCUZ_ROOT . 'source/plugin/tencentcloud_center/vendor/autoload.php';
+
 use GuzzleHttp\Client;
 use TencentCloud\Common\Credential;
 use TencentCloud\Common\Profile\ClientProfile;
@@ -28,10 +30,13 @@ use TencentCloud\Ms\V20180408\MsClient;
 use TencentCloud\Ms\V20180408\Models\DescribeUserBaseInfoInstanceRequest;
 
 class TencentCloudHelper {
+
     //开启数据上报标志
     const SITE_REPORT_OPEN = '1';
+
     //开启自定义密钥标志
     const SITE_SECKEY_OPEN = '1';
+
     /*
      * 获取站点URL
      */
