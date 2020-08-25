@@ -21,10 +21,10 @@ if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
     exit('Access Denied');
 }
 global $_G;
-require_once DISCUZ_ROOT.'./source/plugin/tencentcloud_center/lib/tencentcloud_helper.class.php';
+require_once DISCUZ_ROOT.'source/plugin/tencentcloud_center/lib/tencentcloud_helper.class.php';
 
 //判断是否为插件中心保存设置请求
-if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['tencentcloudglobal'])){
+if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['tencentcloudglobal']) && $_POST['formhash'] === FORMHASH){
     //获取到请求数据
     $data = $_POST['tencentcloudglobal'];
     $save_data = array();

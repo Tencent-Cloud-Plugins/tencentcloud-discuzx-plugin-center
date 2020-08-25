@@ -18,12 +18,14 @@
 if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
     exit('Access Denied');
 }
-require_once DISCUZ_ROOT.'./source/plugin/tencentcloud_center/lib/tencentcloud_helper.class.php';
+require_once DISCUZ_ROOT . 'source/plugin/tencentcloud_center/lib/tencentcloud_helper.class.php';
+
 $static_path = TencentCloudHelper::staticUrl();
+
 /**
  * 判断是否为插件开启或关闭请求
  */
-if (($_SERVER['REQUEST_METHOD'] == 'GET') && isset($_GET['tcplugin'])&&isset($_GET['tcoperation'])) {
+if (($_SERVER['REQUEST_METHOD'] == 'GET') && isset($_GET['tcplugin'])&&isset($_GET['tcoperation']) && $_GET['formhash'] === FORMHASH) {
     $tencentPluginId = $_GET['tcplugin'];
     $operation = $_GET['tcoperation'];
     $conflictplugins = '';
