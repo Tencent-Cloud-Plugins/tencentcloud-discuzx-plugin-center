@@ -21,13 +21,13 @@ if (!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 
 $create_sql = "
 CREATE TABLE IF NOT EXISTS cdb_tencentcloud_pluginInfo (
-       `plugin_name` varchar(255) NOT NULL DEFAULT '',
+       `plugin_name` varchar(150) NOT NULL DEFAULT '',
        `version` varchar(32) NOT NULL DEFAULT '',
        `href` varchar(255) NOT NULL  DEFAULT '',
        `plugin_id` varchar(255) NOT NULL DEFAULT '',
        `activation` varchar(32) NOT NULL DEFAULT '',
        `status` varchar(32) NOT NULL DEFAULT '',
-       `install_datetime` timestamp NOT NULL DEFAULT  CURRENT_TIMESTAMP(),
+       `install_datetime` bigint NOT NULL DEFAULT 0,
        `last_modify_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
        PRIMARY KEY (`plugin_name`)
 ) ENGINE=InnoDB;
